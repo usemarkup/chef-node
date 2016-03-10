@@ -1,7 +1,7 @@
 DEPENDENCIES
-  chef-node
+  node
     path: .
     metadata: true
 
 GRAPH
-  chef-node (0.1.0)
+  node (0.1.1)

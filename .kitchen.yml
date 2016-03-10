@@ -23,5 +23,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef-node]
+      - recipe[node]
     attributes:

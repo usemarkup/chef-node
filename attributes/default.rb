@@ -4,7 +4,7 @@ default[:node][:major_version] = "5"
 default[:node][:epel] = node['platform_version'].to_i
 
 # Node have decided to be annoying and change the filename for EPEL 7
-if node['platform_version'] == 7
+if node[:node][:epel] == 7
     default[:node][:file] = "nodejs-#{node[:node][:version]}nodesource.el#{node[:node][:epel]}.centos.x86_64.rpm"
 else
     default[:node][:file] = "nodejs-#{node[:node][:version]}nodesource.el#{node[:node][:epel]}.x86_64.rpm"
