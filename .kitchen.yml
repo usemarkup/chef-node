@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+  require_chef_omnibus: "12.6.0"
+
+platforms:
+  - name: centos-6.7
+    driver_config:
+      image: centos:6.7
+      platform: rhel
+      provision_command:
+        - yum install -y initscripts net-tools wget
+  - name: centos-7.0
+    driver_config:
+      image: centos:7
+      platform: rhel
+      provision_command:
+        - /bin/yum install -y initscripts net-tools wget
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chef-node]
+    attributes:

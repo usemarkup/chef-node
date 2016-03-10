@@ -1,0 +1,7 @@
+DEPENDENCIES
+  chef-node
+    path: .
+    metadata: true
+
+GRAPH
+  chef-node (0.1.0)
