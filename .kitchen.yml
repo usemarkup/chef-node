@@ -25,3 +25,10 @@ suites:
     run_list:
       - recipe[node]
     attributes:
+  - name: diff-version
+    run_list:
+      - recipe[node]
+    attributes:
+      node:
+        major_version: '0.10'
+        version: '0.10.42-1'
