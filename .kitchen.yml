@@ -11,14 +11,20 @@ platforms:
     driver_config:
       image: centos:6.7
       platform: rhel
-      provision_command:
-        - yum install -y initscripts net-tools wget
-  - name: centos-7.0
+  - name: centos-6.8
+    driver_config:
+      image: centos:6.8
+      platform: rhel
+  - name: centos-7.2
     driver_config:
       image: centos:7
       platform: rhel
-      provision_command:
-        - /bin/yum install -y initscripts net-tools wget
+  - name: debian-8.5
+    driver_config:
+      image: debian:8.5
+  - name: ubuntu-16.04
+    driver_config:
+      image: ubuntu-16.04
 
 suites:
   - name: default
