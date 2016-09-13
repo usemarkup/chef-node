@@ -37,4 +37,4 @@ suites:
     attributes:
       node:
         major_version: '0.10'
-        version: '0.10.42-1'
+        version: '0.10.46-1'
