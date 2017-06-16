@@ -1,40 +1,82 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  privileged: true
+  use_sudo: false
+
+platforms:
+  - name: centos-7
+    driver_config:
+      require_chef_omnibus: "13.1.31"
+      image: centos/systemd
+      run_command: /usr/sbin/init
+      privileged: true
+      provision_command:
+        - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+        - systemctl enable sshd.service
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 13.1.31 && rm install.sh
+
+  - name: centos-7-chef-12
+    driver_config:
+      require_chef_omnibus: "12.7.2"
+      image: centos/systemd
+      run_command: /usr/sbin/init
+      privileged: true
+      provision_command:
+        - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+        - systemctl enable sshd.service
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 12.7.2 && rm install.sh
+
+  - name: centos-68
+    driver_config:
+      require_chef_omnibus: "13.1.31"
+      image: centos:6.8
+      privileged: true
+      provision_command:
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 13.1.31 && rm install.sh
+
+  - name: centos-69
+    driver_config:
+      require_chef_omnibus: "13.1.31"
+      image: centos:6.9
+      privileged: true
+      provision_command:
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 13.1.31 && rm install.sh
+
+  - name: centos-69-chef-12
+    driver_config:
+      require_chef_omnibus: "12.7.2"
+      image: centos:6.9
+      privileged: true
+      provision_command:
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 12.7.2 && rm install.sh
+
+  - name: debian-8
+    driver_config:
+      require_chef_omnibus: "12.7.2"
+      image: debian:8
+      privileged: true
+      provision_command:
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 12.7.2 && rm install.sh
+
+  - name: debian-8
+    driver_config:
+      require_chef_omnibus: "13.1.31"
+      image: debian:8
+      privileged: true
+      provision_command:
+        - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 13.1.31 && rm install.sh
 
 provisioner:
   name: chef_solo
-  require_chef_omnibus: "12.6.0"
 
-platforms:
-  - name: centos-6.7
-    driver_config:
-      image: centos:6.7
-      platform: rhel
-  - name: centos-6.8
-    driver_config:
-      image: centos:6.8
-      platform: rhel
-  - name: centos-7.2
-    driver_config:
-      image: centos:7
-      platform: rhel
-  - name: debian-8.5
-    driver_config:
-      image: debian:8.5
-  - name: ubuntu-16.04
-    driver_config:
-      image: ubuntu:16.04
+verifier:
+  name: inspec
 
 suites:
-  - name: default
+  - name: node
     run_list:
-      - recipe[node]
-    attributes:
-  - name: diff-version
-    run_list:
-      - recipe[node]
-    attributes:
-      node:
-        major_version: '0.10'
-        version: '0.10.46-1'
+        - node
+    verifier:
+      inspec_tests:
+        - tests/node.rb

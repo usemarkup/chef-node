@@ -4,4 +4,4 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  node (0.1.4)
+  node (1.0.0)
