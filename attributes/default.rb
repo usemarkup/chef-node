@@ -1,13 +1,13 @@
-default[:node][:version] = "6.10.3-1"
-default[:node][:major_version] = "6.x"
+default[:node][:version] = '7.9.0-1'
+default[:node][:major_version] = '7.x'
 
-default[:node][:schema] = "https"
+default[:node][:schema] = 'https'
 
 case node[:platform_family]
   when 'debian'
-    default[:node][:host] = "deb.nodesource.com"
+    default[:node][:host] = 'deb.nodesource.com'
   when 'rhel'
-    default[:node][:host] = "rpm.nodesource.com"
+    default[:node][:host] = 'rpm.nodesource.com'
 end
 
 # CENTOS

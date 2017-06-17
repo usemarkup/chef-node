@@ -1,13 +1,6 @@
 release = `lsb_release -c | awk '{ print $2 }'`.gsub(/\n/,"")
 
-case node[:kernel][:machine]
-  when 'x86_64'
-    machine = 'amd64'
-  else
-    machine = node[:kernel][:machine]
-end
-
-file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_#{machine}.deb"
+file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_amd64.deb"
 
 href = [
   "#{node[:node][:schema]}:/",
@@ -17,14 +10,14 @@ href = [
   'main',
   'n',
   'nodejs',
-  file
+  file,
 ].join('/')
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{file}" do
-    source href
-    action :create_if_missing
-    notifies :run, "execute[dpkg-install]", :immediately
-    notifies :run, "execute[apt-install]", :immediately
+  source href
+  action :create_if_missing
+  notifies :run, 'execute[dpkg-install]', :immediately
+  notifies :run, 'execute[apt-install]', :immediately
 end
 
 execute 'dpkg-install' do
@@ -34,6 +27,6 @@ execute 'dpkg-install' do
 end
 
 execute 'apt-install' do
-  command "apt-get install -f -y"
+  command 'apt-get install -f -y'
   action :nothing
 end

@@ -1,7 +1,7 @@
 DEPENDENCIES
-  node
+  nodesource
     path: .
     metadata: true
 
 GRAPH
-  node (0.1.4)
+  nodesource (2.0.0)
