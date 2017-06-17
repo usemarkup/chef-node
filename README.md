@@ -1,7 +1,7 @@
 # Chef Node
 [![Build Status](https://travis-ci.org/usemarkup/chef-node.svg?branch=master)](https://travis-ci.org/usemarkup/chef-node)
 
-Installs node from https://rpm.nodesource.com/pub_5.x/el/6/x86_64/ using the EPEL RPMs
+Installs node from https://github.com/nodesource/distributions for CentOS / Debian
 
 ## Support
 
