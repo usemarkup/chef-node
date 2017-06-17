@@ -76,7 +76,7 @@ verifier:
 suites:
   - name: node
     run_list:
-        - node
+        - nodesource
     verifier:
       inspec_tests:
         - tests/node.rb
