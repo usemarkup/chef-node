@@ -24,6 +24,6 @@ services: docker
 before_script:
   - make install
   - make bundle
-  - make style
+#  - make style
 
 script: bundle exec kitchen test "$suite"
