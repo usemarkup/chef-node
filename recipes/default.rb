@@ -1,1 +1,1 @@
-include_recipe 'node::node'
+include_recipe 'nodesource::node'
