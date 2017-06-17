@@ -1,13 +1,6 @@
-release = `lsb_release -c | awk '{ print $2 }'`.delete(/\n/)
+release = `lsb_release -c | awk '{ print $2 }'`.gsub(/\n/,"")
 
-case node[:kernel][:machine]
-when 'x86_64'
-  machine = 'amd64'
-else
-  machine = node[:kernel][:machine]
-end
-
-file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_#{machine}.deb"
+file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_amd64.deb"
 
 href = [
   "#{node[:node][:schema]}:/",

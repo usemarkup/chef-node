@@ -51,7 +51,7 @@ platforms:
       provision_command:
         - curl -LO https://omnitruck.chef.io/install.sh && sudo bash ./install.sh -v 12.7.2 && rm install.sh
 
-  - name: debian-8
+  - name: debian-8-chef-12
     driver_config:
       require_chef_omnibus: "12.7.2"
       image: debian:8

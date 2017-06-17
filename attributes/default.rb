@@ -1,4 +1,4 @@
-default[:node][:version] = '7.9.0-2'
+default[:node][:version] = '7.9.0-1'
 default[:node][:major_version] = '7.x'
 
 default[:node][:schema] = 'https'
