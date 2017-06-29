@@ -1,7 +1,0 @@
-DEPENDENCIES
-  nodesource
-    path: .
-    metadata: true
-
-GRAPH
-  nodesource (2.0.0)
