@@ -2,7 +2,7 @@ name 'nodesource'
 license 'MIT Licence'
 description 'Installs nodejs from nodesource with an option to install yarn'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '2.0.0'
+version          '2.0.1'
 
 maintainer 'Gavin Staniforth'
 maintainer_email 'gavin@usemarkup.com'
