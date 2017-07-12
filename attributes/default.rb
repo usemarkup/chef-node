@@ -1,5 +1,5 @@
-default[:node][:version] = '7.9.0-1'
-default[:node][:major_version] = '7.x'
+default[:node][:version] = '8.1.3-1'
+default[:node][:major_version] = '8.x'
 
 default[:node][:schema] = 'https'
 
