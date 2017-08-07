@@ -1,25 +1,26 @@
 language: ruby
-dist: trusty
 
 matrix:
   include:
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=centos-7
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=centos-7-chef-12
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=centos-69
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=centos-69-chef-12
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=centos-68
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=debian-8-chef-12
-    - rvm: 2.3
+    - rvm: 2.4
       env: suite=debian-8
 
 sudo: required
 services: docker
+
+install: /bin/true
 
 before_script:
   - make install
