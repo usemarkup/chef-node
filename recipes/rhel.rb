@@ -1,8 +1,8 @@
+file = "nodejs-#{node[:node][:version]}nodesource.el#{node['platform_version'].to_i}.#{node[:kernel][:machine]}.rpm"
+
 # Node have decided to be annoying and change the filename for EPEL 7
 if node['platform_version'].to_i == 7
   file = "nodejs-#{node[:node][:version]}nodesource.el#{node['platform_version'].to_i}.centos.#{node[:kernel][:machine]}.rpm"
-else
-  file = "nodejs-#{node[:node][:version]}nodesource.el#{node['platform_version'].to_i}.#{node[:kernel][:machine]}.rpm"
 end
 
 href = [

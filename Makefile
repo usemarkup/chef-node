@@ -11,6 +11,6 @@ kitchen:
 	bundle exec kitchen test
 
 style:
-	cookstyle -D
+	bundle exec cookstyle -D
 
 all: bundle kitchen

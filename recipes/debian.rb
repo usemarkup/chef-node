@@ -1,4 +1,4 @@
-release = `lsb_release -c | awk '{ print $2 }'`.gsub(/\n/,"")
+release = `lsb_release -c | awk '{ print $2 }'`.delete("\n")
 
 file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_amd64.deb"
 
