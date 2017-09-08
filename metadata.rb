@@ -1,6 +1,6 @@
 name 'nodesource'
 license 'MIT Licence'
-description 'Installs nodejs from nodesource with an option to install yarn'
+description 'Installs nodejs from nodesource'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '2.1.0'
 
