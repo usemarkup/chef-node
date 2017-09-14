@@ -18,6 +18,7 @@ href = [
 remote_file "#{Chef::Config[:file_cache_path]}/#{file}" do
   source href
   action :create_if_missing
+  checksum node[:node][:checksum]
   notifies :install, "package[#{Chef::Config[:file_cache_path]}/#{file}]", :immediately
 end
 
