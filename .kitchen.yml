@@ -77,6 +77,9 @@ suites:
   - name: node
     run_list:
         - nodesource
+        - nodesource::upgrade_npm
+        - nodesource::yarn
     verifier:
       inspec_tests:
         - tests/node.rb
+        - tests/yarn.rb
