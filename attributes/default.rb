@@ -14,6 +14,10 @@ when 'rhel'
   if node['platform_version'].to_i == 6
     default[:node][:checksum] = '29ecbc64c69a334bd54573aaa528930992e836a1501756b46ae4e8bfdeba9c03'
   end
+
+  if node['platform_version'].to_i == 7
+    default[:node][:checksum] = '100e665f2e8e9fccdf490f89049e5e233291f811cfe87b69cf411fa468078318'
+  end
 end
 
 # CENTOS
