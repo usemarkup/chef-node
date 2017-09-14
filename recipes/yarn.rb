@@ -1,10 +1,10 @@
 case node['platform_family']
 when 'debian'
   apt_repository 'yarn' do
-    description 'Yarn Repository'
-    baseurl 'https://dl.yarnpkg.com/debian/'
-    gpgkey 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+    uri 'https://dl.yarnpkg.com/debian/'
+    key 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     components ['main']
+    distribution 'stable'
     action :create
   end
 when 'rhel'
