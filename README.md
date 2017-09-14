@@ -3,6 +3,25 @@
 
 Installs node from https://github.com/nodesource/distributions for CentOS / Debian
 
+## Usage
+
+Changing the versions of node can be done via the attributes, see attributes.rb
+
+```ruby
+default[:node][:version] = '8.4.0-1'
+default[:node][:major_version] = '8.x'
+```
+
+Installing node, upgrading NPM and installing yarn can be done with the following
+
+```json
+  "run_list": [
+    "recipe[nodesource]",
+    "recipe[nodesource::upgrade_npm]",
+    "recipe[nodesource::yarn]"
+  ]
+```
+
 ## Support
 
 - CentOS 6.x
