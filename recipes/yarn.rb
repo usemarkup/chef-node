@@ -5,7 +5,7 @@ when 'debian'
     key 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     components ['main']
     distribution 'stable'
-    action :create
+    action :add
   end
 when 'rhel'
   yum_repository 'yarn' do
