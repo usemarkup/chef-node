@@ -1,5 +1,9 @@
 case node['platform_family']
 when 'debian'
+  package 'apt-transport-https' do
+    action :install
+  end
+
   apt_repository 'yarn' do
     uri 'https://dl.yarnpkg.com/debian/'
     key 'https://dl.yarnpkg.com/debian/pubkey.gpg'
