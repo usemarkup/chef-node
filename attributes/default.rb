@@ -4,10 +4,10 @@ default[:node][:major_version] = '8.x'
 default[:node][:schema] = 'https'
 
 case node[:platform_family]
-  when 'debian'
-    default[:node][:host] = 'deb.nodesource.com'
-  when 'rhel'
-    default[:node][:host] = 'rpm.nodesource.com'
+when 'debian'
+  default[:node][:host] = 'deb.nodesource.com'
+when 'rhel'
+  default[:node][:host] = 'rpm.nodesource.com'
 end
 
 # CENTOS
