@@ -8,8 +8,11 @@ Installs node from https://github.com/nodesource/distributions for CentOS / Debi
 Changing the versions of node can be done via the attributes, see attributes.rb
 
 ```ruby
-default[:node][:version] = '8.4.0-1'
-default[:node][:major_version] = '8.x'
+default['node']['version'] = '8.4.0-1'
+default['node']['major_version'] = '8.x'
+
+# If you wish to install an exact version of Yarn
+default['yarn']['version'] = '0.27.5-1'
 ```
 
 Installing node, upgrading NPM and installing yarn can be done with the following
