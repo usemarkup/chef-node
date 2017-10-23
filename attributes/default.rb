@@ -20,6 +20,8 @@ when 'rhel'
   end
 end
 
+default['yarn']['version'] = nil
+
 # CENTOS
 # EPEL 6: https://rpm.nodesource.com/pub_5.x/el/6/x86_64/nodejs-5.7.1-1nodesource.el6.x86_64.rpm
 # EPEL 7: https://rpm.nodesource.com/pub_5.x/el/7/x86_64/nodejs-5.7.1-1nodesource.el7.centos.x86_64.rpm

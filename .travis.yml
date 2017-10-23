@@ -4,19 +4,23 @@ dist: trusty
 matrix:
   include:
     - rvm: 2.3
-      env: suite=centos-7
+      env: suite=node-centos-7
     - rvm: 2.3
-      env: suite=centos-7-chef-12
+      env: suite=node-yarn-version-centos-7
     - rvm: 2.3
-      env: suite=centos-69
+      env: suite=node-centos-7-chef-12
     - rvm: 2.3
-      env: suite=centos-69-chef-12
+      env: suite=node-centos-69
     - rvm: 2.3
-      env: suite=centos-68
+      env: suite=node-yarn-version-centos-69
     - rvm: 2.3
-      env: suite=debian-8-chef-12
+      env: suite=node-centos-69-chef-12
     - rvm: 2.3
-      env: suite=debian-8
+      env: suite=node-centos-68
+    - rvm: 2.3
+      env: suite=node-debian-8-chef-12
+    - rvm: 2.3
+      env: suite=node-debian-8
 
 sudo: required
 services: docker

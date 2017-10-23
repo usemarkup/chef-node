@@ -83,3 +83,15 @@ suites:
       inspec_tests:
         - tests/node.rb
         - tests/yarn.rb
+  - name: node-yarn-version
+    attributes:
+        yarn:
+            version: 0.27.5-1
+    run_list:
+        - nodesource
+        - nodesource::upgrade_npm
+        - nodesource::yarn
+    verifier:
+      inspec_tests:
+        - tests/node.rb
+        - tests/yarn.rb

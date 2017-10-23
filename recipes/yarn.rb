@@ -20,4 +20,6 @@ when 'rhel'
   end
 end
 
-package 'yarn'
+package 'yarn' do
+  version [node['yarn']['version']] if defined?(node['yarn']['version'])
+end
