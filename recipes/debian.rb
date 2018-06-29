@@ -2,6 +2,11 @@ release = `lsb_release -c | awk '{ print $2 }'`.delete("\n")
 
 file = "nodejs_#{node[:node][:version]}nodesource1~#{release}1_amd64.deb"
 
+# Node have decided to change it again, after version 8 of node
+if node['node']['major_version'].to_i > 8
+  file = "nodejs_#{node[:node][:version]}nodesource1_amd64.deb"
+end
+
 href = [
   "#{node[:node][:schema]}:/",
   node[:node][:host],
