@@ -5,6 +5,11 @@ if node['platform_version'].to_i == 7
   file = "nodejs-#{node[:node][:version]}nodesource.el#{node['platform_version'].to_i}.centos.#{node[:kernel][:machine]}.rpm"
 end
 
+# Node have decided to change it again, after version 8 of node
+if node['node']['major_version'].to_i > 8
+  file = "nodejs-#{node[:node][:version]}nodesource.#{node[:kernel][:machine]}.rpm"
+end
+
 href = [
   "#{node[:node][:schema]}:/",
   node[:node][:host],

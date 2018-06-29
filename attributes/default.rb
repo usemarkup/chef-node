@@ -1,5 +1,5 @@
-default['node']['version'] = '8.4.0-1'
-default['node']['major_version'] = '8.x'
+default['node']['version'] = '10.6.0-1'
+default['node']['major_version'] = '10.x'
 
 default['node']['schema'] = 'https'
 
@@ -12,11 +12,11 @@ when 'rhel'
   default['node']['host'] = 'rpm.nodesource.com'
 
   if node['platform_version'].to_i == 6
-    default['node']['checksum'] = '29ecbc64c69a334bd54573aaa528930992e836a1501756b46ae4e8bfdeba9c03'
+    default['node']['checksum'] = 'b5846ca70b8443a42f0b78266f081ece5c1d16efc009864054b313e63b08b9b0'
   end
 
   if node['platform_version'].to_i == 7
-    default['node']['checksum'] = '100e665f2e8e9fccdf490f89049e5e233291f811cfe87b69cf411fa468078318'
+    default['node']['checksum'] = 'b5846ca70b8443a42f0b78266f081ece5c1d16efc009864054b313e63b08b9b0'
   end
 end
 
