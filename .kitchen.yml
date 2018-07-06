@@ -79,10 +79,14 @@ suites:
         - nodesource
         - nodesource::upgrade_npm
         - nodesource::yarn
-    verifier:
-      inspec_tests:
-        - tests/node.rb
-        - tests/yarn.rb
+  - name: node-8
+    run_list:
+        - nodesource
+    attributes:
+        node:
+            version: '8.11.1-1'
+            major_version: '8.x'
+            checksum: 'nil'
   - name: node-yarn-version
     attributes:
         yarn:
