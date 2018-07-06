@@ -6,7 +6,7 @@ if node['platform_version'].to_i == 7
 end
 
 # Node have decided to change it again, after version 8 of node
-if node['node']['version'].to_f > 8.6
+if Gem::Version.new(node['node']['version'].to_f) > Gem::Version.new('8.6')
   file = "nodejs-#{node[:node][:version]}nodesource.#{node[:kernel][:machine]}.rpm"
 end
 
@@ -23,7 +23,6 @@ href = [
 remote_file "#{Chef::Config[:file_cache_path]}/#{file}" do
   source href
   action :create_if_missing
-  checksum node[:node][:checksum]
   notifies :install, "package[#{Chef::Config[:file_cache_path]}/#{file}]", :immediately
 end
 
