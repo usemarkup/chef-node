@@ -10,14 +10,6 @@ when 'debian'
   default['node']['host'] = 'deb.nodesource.com'
 when 'rhel'
   default['node']['host'] = 'rpm.nodesource.com'
-
-  if node['platform_version'].to_i == 6
-    default['node']['checksum'] = 'b5846ca70b8443a42f0b78266f081ece5c1d16efc009864054b313e63b08b9b0'
-  end
-
-  if node['platform_version'].to_i == 7
-    default['node']['checksum'] = 'b5846ca70b8443a42f0b78266f081ece5c1d16efc009864054b313e63b08b9b0'
-  end
 end
 
 default['yarn']['version'] = nil
